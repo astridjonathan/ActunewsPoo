@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controller;
+
+#use Model\Article; #automatiquement mis si non présent faire alt+entree au niveau de la classe
+
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController
 {
@@ -10,7 +15,10 @@ class DefaultController
      */
     public function home()
     {
-        echo '<h1>PAGE ACCUEIL | CONTROLLER</h1>';
+        #dump($_GET);
+        #$article = new Article(); Un exemple not use
+        #echo '<h1>PAGE ACCUEIL | CONTROLLER</h1>';
+        return new Response('<h1>PAGE ACCUEIL | CONTROLLER | RESPONSE</h1>');
     }
 
     /**
@@ -18,7 +26,8 @@ class DefaultController
      */
     public function category()
     {
-        echo '<h1>PAGE CATEGORIE | CONTROLLER</h1>';
+        #echo '<h1>PAGE CATEGORIE | CONTROLLER</h1>';
+        return new Response('<h1>PAGE CATEGORIE| CONTROLLER | RESPONSE</h1>');
     }
 
     /**
@@ -26,6 +35,7 @@ class DefaultController
      */
     public function article()
     {
-        echo '<h1>PAGE ARTICLE | CONTROLLER</h1>';
+        #echo '<h1>PAGE ARTICLE | CONTROLLER</h1>';
+        return new Response('<h1>PAGE ARTICLE | CONTROLLER | RESPONSE</h1>');
     }
 }

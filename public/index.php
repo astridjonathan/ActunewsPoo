@@ -12,7 +12,13 @@
 //echo '</pre>';
 
 #Chargement automatique des classes
-require_once 'autoload.php';
+#require_once 'autoload.php';
+
+#Autochargement des classes avec Composer
+require_once '../vendor/autoload.php';
 
 #Chargement des routes
-require_once 'routes.php';
+require_once '../app.php';
+
+#Aperçu de $_GET
+#dump($_GET);

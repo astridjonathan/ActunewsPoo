@@ -5,5 +5,7 @@
      */
 
     spl_autoload_register(function($class){
-        require_once 'src/Controller/' . $class .'.php';
+        #echo 'Chargement de : ' . $class . '<br>';
+        #require_once 'src/' . $class .'.php'; src/Model\Nom\..... sur mac et linux ne marche pas
+        require_once 'src/' . str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
     });
