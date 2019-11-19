@@ -14,8 +14,25 @@
 #Chargement automatique des classes
 #require_once 'autoload.php';
 
-#Autochargement des classes avec Composer
+# récupération des paramètres GET et affectation d'une valeur par défaut.
+# https://www.php.net/manual/fr/language.operators.comparison.php
+use Symfony\Component\HttpFoundation\Request;
+
 require_once '../vendor/autoload.php';
+
+#1. Arrivée d'une requête
+#$request représente la requête entrante de notre utilisateur
+$request = Request::createFromGlobals();
+#dump($request->get('controller'));
+
+#Mise en place du container
+$container = \App\Model\Container\Container::getInstance();
+$container->set('request', $request);
+#dump($container);
+
+
+#Chargement de la configuration (à metttre avant et sera donc disponible dans app.php)
+require_once '../config.php';
 
 #Chargement des routes
 require_once '../app.php';

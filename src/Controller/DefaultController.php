@@ -6,7 +6,7 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController
+class DefaultController extends AbstractController
 {
     #Création de 3 fonctions qui représente 1 action (page du site)
 
@@ -18,7 +18,10 @@ class DefaultController
         #dump($_GET);
         #$article = new Article(); Un exemple not use
         #echo '<h1>PAGE ACCUEIL | CONTROLLER</h1>';
-        return new Response('<h1>PAGE ACCUEIL | CONTROLLER | RESPONSE</h1>');
+
+        #return new Response('<h1>PAGE ACCUEIL | CONTROLLER | RESPONSE</h1>');
+        return $this->render('default/home.html.twig');
+
     }
 
     /**
@@ -27,7 +30,9 @@ class DefaultController
     public function category()
     {
         #echo '<h1>PAGE CATEGORIE | CONTROLLER</h1>';
-        return new Response('<h1>PAGE CATEGORIE| CONTROLLER | RESPONSE</h1>');
+        #return new Response('<h1>PAGE CATEGORIE| CONTROLLER | RESPONSE</h1>');
+        return $this->render('default/category.html.twig');
+
     }
 
     /**
@@ -36,6 +41,8 @@ class DefaultController
     public function article()
     {
         #echo '<h1>PAGE ARTICLE | CONTROLLER</h1>';
-        return new Response('<h1>PAGE ARTICLE | CONTROLLER | RESPONSE</h1>');
+        #return new Response('<h1>PAGE ARTICLE | CONTROLLER | RESPONSE</h1>');
+        return $this->render('default/article.html.twig');
+
     }
 }

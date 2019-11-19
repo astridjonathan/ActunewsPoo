@@ -1,31 +1,25 @@
 <?php
 
-# récupération des paramètres GET et affectation d'une valeur par défaut.
-# https://www.php.net/manual/fr/language.operators.comparison.php
-use Symfony\Component\HttpFoundation\Request;
 
-#1. Arrivée d'une requête
-#$request représente la requête entrante de notre utilisateur
-$request = Request::createFromGlobals();
-#dump($request->get('controller'));
 
+
+
+#1. Déduction du controller et de l'action
 #récupération des paramètres GET et affectation d'une valeur par défaut
-$controller = 'App\\Controller\\' . ucfirst($request->get('controller')) . 'Controller'; //DefaultController
-$action     = $request->get('action') ;//?? 'home';
+$controller = 'App\\Controller\\' . ucfirst(($request->get('controller') ?? DEFAULT_CONTROLLER)) . 'Controller'; //DefaultController
+$action     = $request->get('action') ??  DEFAULT_ACTION;//'home';
 #A simplifier
 
 //--------------MIDDLEWARE TWIG-------------------//
-#Chargement de twig
-
-# Récupération du chemin absolu template
-define( 'PATH_ROOT', dirname( $request->server->get('SCRIPT_FILENAME'), 2 ) );
-define( 'PATH_TEMPLATE', PATH_ROOT . '/templates' );
-#dump(PATH_TEMPLATE);
-
-$loader = new \Twig\Loader\FilesystemLoader('PATH_TEMPLATE');
+#2.A  Chargement de twig
+$loader = new \Twig\Loader\FilesystemLoader(PATH_TEMPLATE);
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
 ]);
+
+#2.B On stocke l'isntance de Twig dans notre container
+$container->set('twig', $twig);
+#dump($container);
 
 //--------------ROUTAGE AUTOMATIQUE--------------------//
 #Méthode1
@@ -37,11 +31,12 @@ $twig = new \Twig\Environment($loader, [
 //${$controller}->$action();
 
 #Méthode3
-#2. Traitement de la requête
+#3. Traitement de la requête
 /** @var \Symfony\Component\HttpFoundation\Response $response */
-$response = call_user_func_array([$controller, $action], []);
+$response = call_user_func_array([new $controller, $action], []);
 #dump($response);
-#3. on retourne une réponse au client
+
+#4. on retourne une réponse au client
 $response->send();
 
 
