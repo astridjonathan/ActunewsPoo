@@ -1,25 +1,8 @@
 <?php
 
+#1. Chargement du kernel
+require_once 'kernel/kernel.php';
 
-
-
-
-#1. Déduction du controller et de l'action
-#récupération des paramètres GET et affectation d'une valeur par défaut
-$controller = 'App\\Controller\\' . ucfirst(($request->get('controller') ?? DEFAULT_CONTROLLER)) . 'Controller'; //DefaultController
-$action     = $request->get('action') ??  DEFAULT_ACTION;//'home';
-#A simplifier
-
-//--------------MIDDLEWARE TWIG-------------------//
-#2.A  Chargement de twig
-$loader = new \Twig\Loader\FilesystemLoader(PATH_TEMPLATE);
-$twig = new \Twig\Environment($loader, [
-    'cache' => false,
-]);
-
-#2.B On stocke l'isntance de Twig dans notre container
-$container->set('twig', $twig);
-#dump($container);
 
 //--------------ROUTAGE AUTOMATIQUE--------------------//
 #Méthode1
@@ -31,12 +14,12 @@ $container->set('twig', $twig);
 //${$controller}->$action();
 
 #Méthode3
-#3. Traitement de la requête
+#2. Traitement de la requête
 /** @var \Symfony\Component\HttpFoundation\Response $response */
 $response = call_user_func_array([new $controller, $action], []);
 #dump($response);
 
-#4. on retourne une réponse au client
+#3. on retourne une réponse au client
 $response->send();
 
 

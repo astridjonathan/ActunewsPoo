@@ -18,8 +18,8 @@ use App\Model\Container\Container;
  * Pour être utilisé, elle doit OBLIGATOIREMENT
  * être hérité !
  * ---------------------------------------
- * Autre particularitén elle peux comporter
- * des méthodes abtraites. CAD, des fonctions
+ * Autre particularité elle peux comporter
+ * des méthodes abstraites. CAD, des fonctions
  * qui n'ont pas encore été décrites (écrites).
  */
 

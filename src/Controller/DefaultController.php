@@ -4,6 +4,9 @@ namespace App\Controller;
 
 #use Model\Article; #automatiquement mis si non présent faire alt+entree au niveau de la classe
 
+use App\Model\Article;
+use App\Model\Category;
+use App\Model\User;
 use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends AbstractController
@@ -18,8 +21,19 @@ class DefaultController extends AbstractController
         #dump($_GET);
         #$article = new Article(); Un exemple not use
         #echo '<h1>PAGE ACCUEIL | CONTROLLER</h1>';
-
         #return new Response('<h1>PAGE ACCUEIL | CONTROLLER | RESPONSE</h1>');
+
+        // -- Vérication--//
+        $article= new Article();
+        $category = new Category();
+        $user = new User();
+
+
+        #dump($article->findAll());
+        #dump($category->findAll());
+        #dump($user->findAll());
+
+
         return $this->render('default/home.html.twig');
 
     }
