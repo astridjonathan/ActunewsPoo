@@ -30,8 +30,7 @@ $container = \App\Model\Container\Container::getInstance();
 $container->set('request', $request);
 #dump($container);
 
-
-#Chargement de la configuration (à metttre avant et sera donc disponible dans app.php)
+#Chargement de la configuration (à mettre avant et sera donc disponible dans app.php)
 require_once '../config.php';
 
 #Chargement des routes

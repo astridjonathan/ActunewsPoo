@@ -1,8 +1,12 @@
 <?php
 
 #1. Chargement du kernel
+use App\Model\Category;
+
 require_once 'kernel/kernel.php';
 
+
+#$twig->addGlobal('categories', (new Category())->findAll());
 
 //--------------ROUTAGE AUTOMATIQUE--------------------//
 #Méthode1
@@ -14,7 +18,7 @@ require_once 'kernel/kernel.php';
 //${$controller}->$action();
 
 #Méthode3
-#2. Traitement de la requête
+#2. Traitement de la requêtee
 /** @var \Symfony\Component\HttpFoundation\Response $response */
 $response = call_user_func_array([new $controller, $action], []);
 #dump($response);

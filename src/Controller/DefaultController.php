@@ -23,18 +23,22 @@ class DefaultController extends AbstractController
         #echo '<h1>PAGE ACCUEIL | CONTROLLER</h1>';
         #return new Response('<h1>PAGE ACCUEIL | CONTROLLER | RESPONSE</h1>');
 
-        // -- Vérication--//
-        $article= new Article();
-        $category = new Category();
-        $user = new User();
-
+        // -- Vérification--//
+        //$article= new Article();
+        //$category = new Category();
+        //$user = new User();
 
         #dump($article->findAll());
         #dump($category->findAll());
         #dump($user->findAll());
 
+        # 1. Récupération des articles de la BDD
+        $articles = (new Article())->findAll();
 
-        return $this->render('default/home.html.twig');
+        # 2. Transmission à la Vue
+        return $this->render('default/home.html.twig',[
+            'articles' => $articles
+        ]);
 
     }
 
@@ -43,10 +47,22 @@ class DefaultController extends AbstractController
      */
     public function category()
     {
+            #Recupération de l'instance request  dans le container
+        $request = $this->getParameter('request');
+            #Recupération dans le Request du paramètre GET 'id'
+        $idCategorie = $request->get('id') ?? 1;
+            #Récupération des articles d'une catégorie
+        $article = new Article();
+
+        $where = 'idCategorie = '.$idCategorie;
+        $articles = $article->findAll($where);
+
+        return $this->render('default/category.html.twig',[
+            'articles'=>$articles
+        ]);
+
         #echo '<h1>PAGE CATEGORIE | CONTROLLER</h1>';
         #return new Response('<h1>PAGE CATEGORIE| CONTROLLER | RESPONSE</h1>');
-        return $this->render('default/category.html.twig');
-
     }
 
     /**
@@ -54,9 +70,19 @@ class DefaultController extends AbstractController
      */
     public function article()
     {
+        #Recupération de l'instance request  dans le container
+        $request = $this->getParameter('request');
+        #Recupération dans le Request du paramètre GET 'id'
+        $idArticle= $request->get('id') ?? 0;
+        $article = (new Article())->findOne($idArticle);
+        #dump($article);
+        return $this->render('default/article.html.twig',[
+            'article'=>$article
+        ]);
+
+
         #echo '<h1>PAGE ARTICLE | CONTROLLER</h1>';
         #return new Response('<h1>PAGE ARTICLE | CONTROLLER | RESPONSE</h1>');
-        return $this->render('default/article.html.twig');
 
     }
 }

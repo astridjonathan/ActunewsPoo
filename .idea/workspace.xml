@@ -2,24 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c11cbc60-a288-4423-b508-ef79a1937264" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kernel/kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kernel/middleware/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kernel/middleware/router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kernel/middleware/twig.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Db/DbFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Db/DbTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kernel/event/onKernelReady.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/kernel/KernelEventInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/twig/TwigExtension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/components/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ActunewsPoo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ActunewsPoo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.PHP POO.doc#" beforeDir="false" afterPath="$PROJECT_DIR$/.~lock.PHP POO.doc#" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP POO.doc" beforeDir="false" afterPath="$PROJECT_DIR$/PHP POO.doc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AbstractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/middleware/twig.php" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/middleware/twig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MemberController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Db/DbTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Db/DbTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/components/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/_nav.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/article.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/category.html.twig" afterDir="false" />
@@ -37,6 +37,20 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -51,6 +65,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/twig/string-extra" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Tef9hOCVR0sbJFECH3bWULNjhZ" />
@@ -58,6 +77,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
@@ -99,6 +119,7 @@
       <workItem from="1574080361622" duration="16370000" />
       <workItem from="1574167461537" duration="16617000" />
       <workItem from="1574252650315" duration="14850000" />
+      <workItem from="1574338307273" duration="20611000" />
     </task>
     <servers />
   </component>
