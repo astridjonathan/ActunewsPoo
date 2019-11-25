@@ -12,7 +12,7 @@
     <div class="py-5 bg-light">
         <div class="container ">
             <div class="row">
-
+                {% if articles is not empty %}
                     {% for article in articles %}
                         <div class="col-md-4 mt-4">
                             <div class="card shadow-sm">
@@ -30,7 +30,11 @@
                             </div> <!-- Fin card -->
                         </div>
                     {% endfor %}
-
+                {% else %}
+                    <div class="col alert alert-warning text-center">
+                        Aucune publication pour le moment
+                    </div>
+                {% endif %}
             </div>
         </div> <!-- Fin container -->
     </div>
